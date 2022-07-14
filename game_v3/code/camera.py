@@ -25,7 +25,7 @@ class CameraGroup(pygame.sprite.Group):
         ground_offset = level.map_rect.topleft - self.offset
         self.display_surface.blit(level.map_surface, ground_offset)
         level.map_surface.fill(settings.bg_color)
-        level.tiles.draw(level.map_surface)
+        level.run()
 
         # Particles
         #level.get_player_on_ground(player)

@@ -1,11 +1,11 @@
 import pygame
 
 #Screen setup
-screen_width = 1024
-screen_height = 576
+screen_width = 1280
+screen_height = 720
 
 #Global variables
-bg_color = pygame.Color("#2c3b4a")
+bg_color = pygame.Color("#0f070d")
 accent_color = pygame.Color(152, 142, 230)
 great_color = pygame.Color(245, 73, 60)
 

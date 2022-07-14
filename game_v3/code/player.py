@@ -7,14 +7,14 @@ class Player(pygame.sprite.Sprite):
         self.player_surface = pygame.Surface((24, 68))
         self.import_character_assets()
         self.frame_index = 0
-        self.animation_spd = 0.15
+        self.animation_spd = 0.25
         self.image = self.animations["idle"][self.frame_index]
         self.rect = self.player_surface.get_rect( topleft = (pos_x, pos_y))
 
         # World awareness
         self.level_obj = level
 
-        self.world_tiles = self.level_obj.tiles.sprites()
+        self.world_tiles = self.level_obj.terrain_sprites.sprites()
 
         # Dust particles
         self.import_dust_run_particles()
@@ -24,12 +24,12 @@ class Player(pygame.sprite.Sprite):
         self.create_jump_particles = create_jump_particles
 
         # World constants
-        self.gravity = 0.6
+        self.gravity = 0.8
 
         # Player movement
         self.direction = pygame.math.Vector2(0, 0)
         self.hspd = 10
-        self.vspd = -16
+        self.vspd = -20
 
         # Player combat atributes
         self.max_health = 5
@@ -142,10 +142,10 @@ class Player(pygame.sprite.Sprite):
                     self.rect.left = sprite.rect.right
                     self.on_left = True
         
-        if self.on_right and (self.rect.right > self.level_obj.current_x or self.direction. x <= 0):
-            self.on_right = False
-        if self.on_left and (self.rect.left < self.level_obj.current_x or self.direction.x >= 0):
-            self.on_left = False
+        #if self.on_right and (self.rect.right > self.level_obj.current_x or self.direction. x <= 0):
+            #self.on_right = False
+        #if self.on_left and (self.rect.left < self.level_obj.current_x or self.direction.x >= 0):
+            #self.on_left = False
 
     def vertical_collision(self):
         
